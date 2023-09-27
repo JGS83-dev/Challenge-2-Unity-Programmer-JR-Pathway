@@ -10,8 +10,8 @@ public class SpawnManagerX : MonoBehaviour
     private float spawnLimitXRight = 7;
     private float spawnPosY = 30;
 
-    private float startDelay = 1.0f;
-    private float spawnInterval = 4.0f;
+    private float startDelay = 3.0f;
+    private float spawnInterval = 5.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,8 @@ public class SpawnManagerX : MonoBehaviour
         Vector3 spawnPos = new Vector3(Random.Range(spawnLimitXLeft, spawnLimitXRight), spawnPosY, 0);
 
         // instantiate ball at random spawn location
-        Instantiate(ballPrefabs[0], spawnPos, ballPrefabs[0].transform.rotation);
+        int objetivoAparecer = Random.Range(0, ballPrefabs.Length);
+        Instantiate(ballPrefabs[objetivoAparecer], spawnPos, ballPrefabs[objetivoAparecer].transform.rotation);
     }
 
 }
